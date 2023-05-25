@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from .models import CustomUser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.core.mail import send_mail
@@ -45,8 +46,8 @@ class VerificationView(APIView):
 
             # Retrieve the user by email
             try:
-                user = User.objects.get(email=email)
-            except User.DoesNotExist:
+                user = CustomUser.objects.get(email=email)
+            except CustomUser.DoesNotExist:
                 return Response({"message": "User not found."}, status=400)
 
             # Compare the verification code
