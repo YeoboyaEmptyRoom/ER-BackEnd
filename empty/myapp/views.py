@@ -21,7 +21,7 @@ class UserCreateView(generics.CreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(
-            {"message": "회원가입이 성공적으로 완료되었습니다."}, status=201, headers=headers
+            {"message": "회원가입이 성공적으로 완료되었습니다."}, status=200, headers=headers
         )
 
 
