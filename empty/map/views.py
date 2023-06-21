@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from .models import Room, Room_detail
-from .serializers import RoomSerializer
+from .serializers import RoomSerializer, detailSerializer
 
 
 # Create your views here.
@@ -26,4 +26,7 @@ class LeaseRoomListAPIView(generics.ListAPIView):
     serializer_class = RoomSerializer
 
 
-# class detailAPIView(generics.ListAPIView):
+class RoomDetailAPIView(generics.RetrieveAPIView):
+    queryset = Room_detail.objects.all()
+    serializer_class = detailSerializer
+    lookup_field = "pk"

@@ -5,6 +5,7 @@ from .views import (
     RoomListAPIView,
     MonthlyRoomListAPIView,
     LeaseRoomListAPIView,
+    RoomDetailAPIView,
 )
 
 urlpatterns = [
@@ -14,4 +15,6 @@ urlpatterns = [
     path("rooms/", RoomListAPIView.as_view(), name="room-list"),
     path("rooms/monthly/", MonthlyRoomListAPIView.as_view(), name="monthly-room-list"),
     path("rooms/lease/", LeaseRoomListAPIView.as_view(), name="lease-room-list"),
+    # 상세 페이지
+    path("room_detail/<int:pk>/", RoomDetailAPIView.as_view(), name="room_detail"),
 ]
