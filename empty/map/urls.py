@@ -2,6 +2,7 @@ from django.urls import path, include
 from django.http import HttpResponse
 from .views import (
     map_view,
+    map_apartment_view,
     RoomListAPIView,
     MonthlyRoomListAPIView,
     LeaseRoomListAPIView,
@@ -11,6 +12,7 @@ from .views import (
 urlpatterns = [
     path("check-main", lambda request: HttpResponse("확인")),
     path("map/", map_view, name="map"),
+    path("map_apartment/", map_apartment_view, name="apart"),
     # path("map/apart",),
     path("rooms/", RoomListAPIView.as_view(), name="room-list"),
     path("rooms/monthly/", MonthlyRoomListAPIView.as_view(), name="monthly-room-list"),

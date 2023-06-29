@@ -11,6 +11,10 @@ def map_view(request):
     return render(request, "kakao/map.html")
 
 
+def map_apartment_view(request):
+    return render(request, "kakao/map_apartment.html")
+
+
 class RoomListAPIView(generics.ListAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer

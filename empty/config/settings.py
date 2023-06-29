@@ -27,7 +27,6 @@ SECRET_KEY = "django-insecure-xnop4s1b0*iey0@3l)3lapksxxvc69ujp5f))2dp*q(^y2$))y
 DEBUG = True
 
 # ALLOWED_HOSTS = ["example.com", "localhost", "172.20.10.2"]
-# ALLOWED_HOSTS = ["example.com", "localhost", "192.168.1.2"]
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     # 파일 추가
     "myapp",
     "map",
+    "notice",
     # 설치 한 파일
     "rest_framework",
     # 설치한 라이브러리들

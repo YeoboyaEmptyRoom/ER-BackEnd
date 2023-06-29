@@ -24,4 +24,5 @@ urlpatterns = [
     # jwt 회원가입
     path("user/", include("myapp.urls")),
     path("main/", include("map.urls")),  # main 페이지
+    path("notice/", include("notice.urls")),  # 공지사항 페이지
 ]
